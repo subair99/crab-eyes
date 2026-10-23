@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Crab Eyes
+.env.*
+!.env.example
+data/private/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+*~

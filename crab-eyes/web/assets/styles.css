@@ -1,0 +1,18 @@
+:root { --ink: #1d1d1b; --muted: #6b6b66; --line: #ddd9cf; --bg: #fbfaf6;
+  --high: #b3261e; --check: #b26a00; --ok: #1e7a46; --none: #5a5a5a; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--ink); background: var(--bg); }
+header, main { max-width: 860px; margin: 0 auto; padding: 16px; }
+h1, h2 { line-height: 1.2; }
+.proverb, .muted { color: var(--muted); }
+textarea, input, button { width: 100%; font: inherit; margin: 6px 0; }
+textarea { padding: 10px; border: 1px solid var(--line); border-radius: 8px; }
+button { padding: 10px; border: 0; border-radius: 8px; background: var(--ink); color: #fff; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.verdict { display: inline-block; padding: 6px 14px; border-radius: 999px; color: #fff; font-weight: 600; }
+.verdict.high_risk { background: var(--high); } .verdict.check_first { background: var(--check); }
+.verdict.looks_legitimate { background: var(--ok); } .verdict.not_enough_evidence { background: var(--none); }
+.mismatch td { background: #fdecea; }
+.rejected { opacity: .6; }
+.progress { color: var(--muted); }

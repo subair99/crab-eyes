@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crab Eyes dossier</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header><a href="index.html">Crab Eyes</a></header>
+  <main id="dossier">
+    <section id="verdict"></section>
+    <section><h2>What it heard</h2><ul id="claims"></ul></section>
+    <section><h2>The plan</h2><ul id="plan"></ul></section>
+    <section><h2>Investigation</h2><ul id="findings"></ul></section>
+    <section><h2>Claims vs. records</h2><table id="cvr"></table></section>
+    <section><h2>Competing explanations</h2><ul id="explanations"></ul></section>
+    <section><h2>Prove me wrong</h2><ul id="change"></ul>
+      <textarea id="evidence" rows="3" placeholder="Add evidence, e.g. an SEC registration number"></textarea>
+      <button id="prove">Re-run with this evidence</button></section>
+    <section><h2>Trace</h2><table id="trace"></table><p id="cost"></p></section>
+    <p id="disclaimer" class="muted"></p>
+  </main>
+  <script src="assets/app.js"></script>
+  <script>CrabEyes.initDossier();</script>
+</body>
+</html>

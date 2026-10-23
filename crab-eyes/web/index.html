@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crab Eyes</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Crab Eyes</h1>
+    <p class="proverb">The crab guards its head with its eyes. Check any investment offer before you send money.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Check a pitch</h2>
+      <textarea id="pitch" rows="6" placeholder="Paste the message you received"></textarea>
+      <input type="file" id="image" accept="image/*">
+      <button id="go">Investigate</button>
+      <ol id="progress" class="progress"></ol>
+    </section>
+    <section>
+      <h2>Try a real case</h2>
+      <ul id="gallery"></ul>
+    </section>
+    <p><a href="ledger.html">Early-warning ledger</a></p>
+  </main>
+  <script src="assets/app.js"></script>
+  <script>CrabEyes.initHome();</script>
+</body>
+</html>

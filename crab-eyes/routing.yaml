@@ -1,0 +1,35 @@
+# Which Nemotron model does each job. Model IDs come from the Nebius Token Factory catalog;
+# app/config.py checks them against GET /v1/models at start-up and warns if one is missing.
+# Prices are USD per 1M tokens (input / output), used by the trace for cost per dossier.
+
+models:
+  nano:
+    id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
+    price_in: 0.06
+    price_out: 0.24
+  nano_omni:
+    id: ""            # TODO: copy the Nemotron 3 Nano Omni ID from /v1/models; leave empty to disable image/audio intake
+    price_in: 0.06    # TODO: confirm in your console
+    price_out: 0.24
+  super:
+    id: nvidia/nemotron-3-super-120b-a12b
+    price_in: 0.30
+    price_out: 0.90
+  ultra:
+    id: nvidia/Nemotron-3-Ultra-550b-a55b
+    price_in: 1.00
+    price_out: 3.00
+
+roles:
+  intake_text: nano        # pull claims out of a text pitch
+  intake_media: nano_omni  # read screenshots / hear voice notes (falls back to intake_text if no ID)
+  planner: super           # choose checks, chase missing evidence
+  investigator: super      # the five checks
+  verifier: super          # entity match, freshness, contradictions
+  reasoner: ultra          # one call per dossier: explanations + claims vs. records
+  clustering: nano         # nightly ledger grouping
+  reply: nano              # short user-facing text (warning message)
+
+limits:
+  planner_rounds: 2
+  max_tool_calls_per_dossier: 12

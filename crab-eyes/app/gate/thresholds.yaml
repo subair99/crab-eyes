@@ -1,0 +1,7 @@
+# Policy-gate thresholds. Tune against evals/cases.csv; record any change and its effect in evals/results/.
+min_verified_sources: 2          # fewer than this -> "not enough evidence" (unless high-risk rules fire)
+min_independent_red_flags: 2     # for "high risk" without the maths rule
+maths:
+  # A promise "fails the maths" when its yearly equivalent exceeds BOTH of these.
+  max_plausible_annual_return: 1.0   # 100% a year
+  benchmark_multiple: 3.0            # 3x the current T-bill yield (BENCHMARK_ANNUAL_RATE)
