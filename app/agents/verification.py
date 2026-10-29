@@ -17,7 +17,8 @@ from app.schemas import Claims, Finding
 async def verify(claims: Claims, findings: list[Finding], trace: Trace) -> list[Finding]:
     cutoff = get_settings().evidence_end_date
     for f in findings:
-        if f.source and not f.self_evident and after_cutoff(f.source.published_date, cutoff):
+        if f.source and not f.self_evident and after_cutoff(
+                f.source.published_date, cutoff, f.source.snippet + " " + f.summary):
             f.rejected_reason = f"published after cutoff {cutoff}"
 
     candidates = [(i, f) for i, f in enumerate(findings)

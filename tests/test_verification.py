@@ -27,3 +27,11 @@ def test_datetime_strings_are_accepted():
 def test_bad_cutoff_raises():
     with pytest.raises(ValueError):
         after_cutoff("2025-01-01", "April 9")
+
+
+def test_rfc2822_date_before_cutoff_is_kept():
+    assert not after_cutoff("Sat, 02 Nov 2024 00:00:00 GMT", "2025-04-09")
+
+
+def test_old_page_mentioning_a_later_year_is_rejected():
+    assert after_cutoff("Fri, 01 Nov 2024 00:00:00 GMT", "2025-04-09", "SEC warns against CBEX, 2026 notice")
