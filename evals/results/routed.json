@@ -1,0 +1,103 @@
+{
+  "mode": "routed",
+  "cases": 13,
+  "precision_high_risk": 1.0,
+  "recall_high_risk": 0.75,
+  "false_alarms": 0,
+  "share_not_enough_evidence": 0.231,
+  "median_seconds": 38.7,
+  "avg_cost_usd": 0.01122,
+  "rows": [
+    {
+      "id": "real01",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 41.43534283600002,
+      "cost": 0.015519
+    },
+    {
+      "id": "real02",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 30.508163018999767,
+      "cost": 0.01046
+    },
+    {
+      "id": "real03",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 43.99681997799962,
+      "cost": 0.019165
+    },
+    {
+      "id": "real04",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 38.697008232999906,
+      "cost": 0.01683
+    },
+    {
+      "id": "legit01",
+      "expected": "looks_legitimate",
+      "predicted": "check_first",
+      "seconds": 54.0155272789998,
+      "cost": 0.021081
+    },
+    {
+      "id": "legit02",
+      "expected": "looks_legitimate",
+      "predicted": "check_first",
+      "seconds": 50.383313062999605,
+      "cost": 0.013938
+    },
+    {
+      "id": "legit03",
+      "expected": "looks_legitimate",
+      "predicted": "not_enough_evidence",
+      "seconds": 18.18699354499995,
+      "cost": 0.003781
+    },
+    {
+      "id": "syn01",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 37.25613059200032,
+      "cost": 0.010045
+    },
+    {
+      "id": "syn02",
+      "expected": "high_risk",
+      "predicted": "check_first",
+      "seconds": 21.252802792999773,
+      "cost": 0.005723
+    },
+    {
+      "id": "syn03",
+      "expected": "high_risk",
+      "predicted": "high_risk",
+      "seconds": 42.95962848699992,
+      "cost": 0.01216
+    },
+    {
+      "id": "syn04",
+      "expected": "check_first",
+      "predicted": "not_enough_evidence",
+      "seconds": 19.52595748900012,
+      "cost": 0.004074
+    },
+    {
+      "id": "syn05",
+      "expected": "high_risk",
+      "predicted": "check_first",
+      "seconds": 41.701308530999995,
+      "cost": 0.00955
+    },
+    {
+      "id": "syn06",
+      "expected": "not_enough_evidence",
+      "predicted": "not_enough_evidence",
+      "seconds": 11.623756074000084,
+      "cost": 0.003484
+    }
+  ]
+}
