@@ -9,7 +9,7 @@ import json
 from app.agents._prompts import prompt
 from app.config import get_settings
 from app.gate.dates import after_cutoff
-from app.llm.router import chat_json
+from app.llm.router import chat_json, items
 from app.llm.trace import Trace
 from app.schemas import Claims, Finding
 
@@ -17,10 +17,11 @@ from app.schemas import Claims, Finding
 async def verify(claims: Claims, findings: list[Finding], trace: Trace) -> list[Finding]:
     cutoff = get_settings().evidence_end_date
     for f in findings:
-        if f.source and after_cutoff(f.source.published_date, cutoff):
+        if f.source and not f.self_evident and after_cutoff(f.source.published_date, cutoff):
             f.rejected_reason = f"published after cutoff {cutoff}"
 
-    candidates = [(i, f) for i, f in enumerate(findings) if f.rejected_reason is None and f.source]
+    candidates = [(i, f) for i, f in enumerate(findings)
+                  if f.rejected_reason is None and f.source and not f.self_evident]
     if candidates:
         payload = {
             "claims": claims.model_dump(exclude={"raw_text"}),
@@ -29,7 +30,9 @@ async def verify(claims: Claims, findings: list[Finding], trace: Trace) -> list[
         }
         data = await chat_json("verifier", [{"role": "system", "content": prompt("verification")},
                                             {"role": "user", "content": json.dumps(payload)}], trace, temperature=0)
-        for r in data.get("results", []):
+        for r in items(data, "results"):
+            if not isinstance(r, dict) or not isinstance(r.get("index"), int) or not 0 <= r["index"] < len(findings):
+                continue
             f = findings[r["index"]]
             f.entity_match = r.get("entity_match", "uncertain")
             if f.entity_match == "mismatch":
@@ -40,6 +43,6 @@ async def verify(claims: Claims, findings: list[Finding], trace: Trace) -> list[
                 f.rejected_reason = f"contradicted by finding(s) {r['contradicted_by']}"
 
     for f in findings:
-        # Maths and user-supplied evidence have no web source; they are verified by construction.
-        f.verified = f.rejected_reason is None and (f.source is not None or f.check in ("ponzi_maths", "user_evidence"))
+        f.verified = f.rejected_reason is None and (
+            f.self_evident or f.source is not None or f.check in ("ponzi_maths", "user_evidence"))
     return findings

@@ -50,4 +50,11 @@ def parse_json(text: str) -> dict | list:
     start = min([i for i in (text.find("{"), text.find("[")) if i != -1], default=-1)
     if start == -1:
         raise ValueError(f"No JSON in model output: {text[:200]!r}")
-    return json.loads(text[start:])
+    return json.JSONDecoder().raw_decode(text[start:])[0]
+
+
+def items(data: dict | list, key: str) -> list:
+    """Return data[key] when the model returned an object, or the list itself when it returned a bare list."""
+    if isinstance(data, list):
+        return data
+    return data.get(key, []) or []

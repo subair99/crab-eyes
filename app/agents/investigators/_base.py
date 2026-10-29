@@ -5,7 +5,7 @@ import json
 from urllib.parse import urlparse
 
 from app.agents._prompts import prompt
-from app.llm.router import chat_json
+from app.llm.router import chat_json, items
 from app.llm.trace import Trace
 from app.schemas import Finding, Source
 from app.tools import tavily
@@ -30,12 +30,14 @@ async def search_and_judge(check: str, prompt_name: str, queries: list[str], tra
     data = await chat_json("investigator", [{"role": "system", "content": prompt(prompt_name)},
                                             {"role": "user", "content": json.dumps(payload)}], trace, temperature=0)
     findings = []
-    for item in data.get("findings", []):
-        url = item.get("url", "")
+    for item in items(data, "findings"):
+        if not isinstance(item, dict):  # skip stray strings the model sometimes adds
+            continue
+        url = item.get("url") or ""
         r = by_url.get(url, {})
         findings.append(Finding(
             check=check,
-            kind=item.get("kind", "neutral"),
+            kind=item.get("kind") if item.get("kind") in ("red_flag", "register_match", "neutral") else "neutral",
             summary=item.get("summary", ""),
             source=Source(url=url, title=r.get("title", ""), published_date=r.get("published_date"),
                           snippet=r.get("content", "")[:300]) if url else None,

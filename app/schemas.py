@@ -37,6 +37,7 @@ class Finding(BaseModel):
     details_match: bool | None = None           # register entry matches site and contacts
     verified: bool = False                      # set by the verification step
     rejected_reason: str | None = None          # set when verification rejects it
+    self_evident: bool = False 
 
 
 class Explanation(BaseModel):

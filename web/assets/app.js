@@ -60,10 +60,13 @@ const CrabEyes = (() => {
       c.promised_return != null ? `Promised: ${Math.round(c.promised_return * 100)}% per ${c.return_period_months} month(s)` : null,
       ...c.regulator_claims, ...c.other_claims].filter(Boolean).map((x) => `<li>${esc(x)}</li>`).join("");
     el("plan").innerHTML = d.plan.map((p) => `<li>${esc(p)}</li>`).join("");
-    el("findings").innerHTML = d.findings.map((f) => `<li class="${f.verified ? "" : "rejected"}">` +
-      `<b>${esc(f.check)}</b>: ${esc(f.summary)}` +
+    const row = (f) => `<li class="${f.verified ? "" : "rejected"}"><b>${esc(f.check)}</b>: ${esc(f.summary)}` +
       (f.source ? ` <a href="${esc(f.source.url)}" target="_blank" rel="noopener">source</a>` : "") +
-      (f.rejected_reason ? ` <span class="muted">(set aside: ${esc(f.rejected_reason)})</span>` : "") + `</li>`).join("");
+      (f.rejected_reason ? ` <span class="muted">(set aside: ${esc(f.rejected_reason)})</span>` : "") + `</li>`;
+    const used = d.findings.filter((f) => f.verified), aside = d.findings.filter((f) => !f.verified);
+    el("findings").innerHTML = used.map(row).join("") + (aside.length
+      ? `<details><summary class="muted">${aside.length} source(s) checked and set aside</summary><ul>${aside.map(row).join("")}</ul></details>`
+      : "");
     el("cvr").innerHTML = "<tr><th>Claim</th><th>Record</th></tr>" + d.claims_vs_records.map((r) =>
       `<tr class="${r.mismatch ? "mismatch" : ""}"><td>${esc(r.claim)}</td><td>${esc(r.record)}` +
       (r.source_url ? ` <a href="${esc(r.source_url)}" target="_blank" rel="noopener">source</a>` : "") + `</td></tr>`).join("");

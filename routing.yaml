@@ -7,10 +7,10 @@ models:
     id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B
     price_in: 0.06
     price_out: 0.24
-  nano_omni:
-    id: ""            # TODO: copy the Nemotron 3 Nano Omni ID from /v1/models; leave empty to disable image/audio intake
-    price_in: 0.06    # TODO: confirm in your console
-    price_out: 0.24
+  vision:
+    id: nvidia/Nemotron-3.5-Super-VL
+    price_in: 0.15    # TODO: confirm in the Token Factory catalog
+    price_out: 0.50   # TODO: confirm in the Token Factory catalog
   super:
     id: nvidia/nemotron-3-super-120b-a12b
     price_in: 0.30
@@ -22,7 +22,7 @@ models:
 
 roles:
   intake_text: nano        # pull claims out of a text pitch
-  intake_media: nano_omni  # read screenshots / hear voice notes (falls back to intake_text if no ID)
+  intake_media: vision     # read screenshots / hear voice notes (falls back to intake_text if no ID)
   planner: super           # choose checks, chase missing evidence
   investigator: super      # the five checks
   verifier: super          # entity match, freshness, contradictions

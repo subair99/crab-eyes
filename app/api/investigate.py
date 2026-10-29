@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import logging
 
 from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
@@ -20,10 +21,11 @@ class InvestigateRequest(BaseModel):
     image_b64: str | None = None
 
 
-async def save(dossier: dict, text: str) -> None:
+async def save(dossier: dict) -> None:
     async with SessionLocal() as s:
         names = dossier["claims"].get("company_names") or [None]
-        s.add(DossierRow(id=dossier["id"], input_fingerprint=fingerprint(text), verdict=dossier["verdict"],
+        s.add(DossierRow(id=dossier["id"], input_fingerprint=fingerprint(dossier["claims"]["raw_text"]),
+                         verdict=dossier["verdict"],
                          company=names[0], cost_usd=dossier["cost_usd"], body=dossier))
         await s.commit()
 
@@ -32,9 +34,13 @@ async def save(dossier: dict, text: str) -> None:
 async def run(req: InvestigateRequest):
     # TODO: return a cached dossier when the same fingerprint was investigated recently (saves credits).
     async def stream():
-        async for event in investigate(text=req.text, image_b64=req.image_b64):
-            if event["type"] == "dossier":
-                await save(event["dossier"], req.text)
-            yield json.dumps(event) + "\n"
+        try:
+            async for event in investigate(text=req.text, image_b64=req.image_b64):
+                if event["type"] == "dossier":
+                    await save(event["dossier"])
+                yield json.dumps(event) + "\n"
+        except Exception as exc:  # show the problem on the page; the full traceback stays in the terminal
+            logging.exception("Investigation failed")
+            yield json.dumps({"type": "progress", "line": f"Error: {exc}"}) + "\n"
 
     return StreamingResponse(stream(), media_type="application/x-ndjson")

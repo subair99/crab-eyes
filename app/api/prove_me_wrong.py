@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import json
+import logging
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
+from app.api.investigate import save  # same saving code as a normal investigation
 from app.db.models import DossierRow
 from app.db.session import SessionLocal
 from app.pipeline import investigate
@@ -33,8 +35,14 @@ async def prove_me_wrong(dossier_id: str, ev: Evidence):
                    independence_key="user")
 
     async def stream():
-        async for event in investigate(text=original + "\n\nUser-supplied evidence: " + ev.text,
-                                       extra_findings=[lead]):
-            yield json.dumps(event) + "\n"
+        try:
+            async for event in investigate(text=original + "\n\nUser-supplied evidence: " + ev.text,
+                                           extra_findings=[lead]):
+                if event["type"] == "dossier":
+                    await save(event["dossier"])
+                yield json.dumps(event) + "\n"
+        except Exception as exc:  # show the problem on the page; the full traceback stays in the terminal
+            logging.exception("Prove-me-wrong re-run failed")
+            yield json.dumps({"type": "progress", "line": f"Error: {exc}"}) + "\n"
 
     return StreamingResponse(stream(), media_type="application/x-ndjson")
