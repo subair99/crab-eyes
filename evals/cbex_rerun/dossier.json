@@ -1,0 +1,359 @@
+{
+  "id": "dbaed962cde0",
+  "claims": {
+    "company_names": [
+      "CBEX"
+    ],
+    "promised_return": 1.0,
+    "return_period_months": 1.0,
+    "regulator_claims": [],
+    "people": [],
+    "urls": [],
+    "other_claims": [
+      "Invite friends and receive a 10% referral bonus."
+    ],
+    "language": "en",
+    "raw_text": "CBEX - digital asset trading platform.\nOur AI trading signals help you double your investment: 100% return in 30 days.\nRegister, deposit and earn. Invite friends and receive a 10% referral bonus."
+  },
+  "plan": [
+    "regulator",
+    "ponzi_maths",
+    "footprint",
+    "people",
+    "voices"
+  ],
+  "findings": [
+    {
+      "check": "regulator",
+      "kind": "red_flag",
+      "summary": "SEC sitemap lists an 'Illegal Operator Alert' for CBEX (Crypto Bridge Exchange) / Super Technology / ST Technologies International Ltd.",
+      "source": {
+        "url": "https://sec.gov.ng/sitemap.html",
+        "title": "Sitemap - Securities and Exchange Commission, Nigeria",
+        "published_date": null,
+        "snippet": "/ CBEX(Crypto Bridge Exchange) / Super Technology/ ST Technologies International Ltd\n\n/ Notice Of Cancellation Of Registration Of Mainland Trust Limited\n\n/ Relocation Of Monitoring And Enforcement Departments\n\n/ Circular to Fund/Portfolio Managers on Payment of Supervisory and Regulatory Fees\n\n/ Cir"
+      },
+      "official": true,
+      "independence_key": "sec.gov.ng",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "regulator",
+      "kind": "red_flag",
+      "summary": "SEC news item indicates legal action: 'SEC vs Crypto Bridge Exchange (CBEX) and 22 Ors' dated Aug. 8, 2025.",
+      "source": {
+        "url": "https://sec.gov.ng/about/news",
+        "title": "News - Securities and Exchange Commission ...",
+        "published_date": null,
+        "snippet": "Sep 24, 2023 \u2014 Full Electronic Registration (e-Registration) now available on the ePortal \u30fb latest SEC updates. SEC vs Crypto Bridge Exchange (CBEX) and 22 Ors Aug. 8, 2025"
+      },
+      "official": true,
+      "independence_key": "sec.gov.ng",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "regulator",
+      "kind": "red_flag",
+      "summary": "SEC circulars page includes an 'Illegal Operator Alert' for CBEX (Crypto Bridge Exchange) / Super Technology / ST Technologies International Ltd dated June 11, 2025 (also mentioned April 17, 2025).",
+      "source": {
+        "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars",
+        "title": "Keep Track of Circulars - Securities and Exchange Commission, Nigeria",
+        "published_date": null,
+        "snippet": "Illegal Operator Alert \u2013 Silverkuun Investment Cooperative Society/Silverkuun Limited May 28, 2025\n\nPublic Notice \u2013 Property World Africa Network (PWAN)/PWANMax May 6, 2025\n\nTechnology adoption Survey for Capital Market Operators May 5, 2025\n\nPostponement of First Capital Market Committee (CMC) Meet"
+      },
+      "official": true,
+      "independence_key": "sec.gov.ng",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "ponzi_maths",
+      "kind": "red_flag",
+      "summary": "100% a month compounds to 409,500% a year.",
+      "source": null,
+      "official": false,
+      "independence_key": "calculator",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": true,
+      "rejected_reason": null,
+      "self_evident": false
+    },
+    {
+      "check": "footprint",
+      "kind": "neutral",
+      "summary": "Content describes the role of the Corporate Affairs Commission in Nigeria; no investment company claims or suspicious elements.",
+      "source": {
+        "url": "https://www.instagram.com/p/DG28MIzMMde",
+        "title": "The Corporate Affairs Commission (CAC) ...",
+        "published_date": null,
+        "snippet": "Company Registration: CAC is responsible for registering new companies, partnerships, and businesses in Nigeria, including limited liability companies, non"
+      },
+      "official": false,
+      "independence_key": "www.instagram.com",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "footprint",
+      "kind": "neutral",
+      "summary": "Facebook post about the Registrar General of the CAC discussing digital transformation; no investment firm context.",
+      "source": {
+        "url": "https://www.facebook.com/DailyTrustOfficial/posts/registrar-general-of-the-corporate-affairs-commission-hussain-ishaq-magaji-san-h/905654551599163",
+        "title": "Registrar General of the Corporate Affairs Commission ...",
+        "published_date": null,
+        "snippet": "The CAC, which regulates company incorporation and business registration in Nigeria, has embarked on a major digital-transformation initiative"
+      },
+      "official": false,
+      "independence_key": "www.facebook.com",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "footprint",
+      "kind": "neutral",
+      "summary": "SabiLaw page listing various federal laws and legal topics; includes CAC information but no investment company details.",
+      "source": {
+        "url": "https://sabilaw.org/federal-laws",
+        "title": "Federal Laws - SabiLaw",
+        "published_date": null,
+        "snippet": "CAC Can Now Takeover Churches, Mosques, Associations and NGOs\n CAC Operations Checklist, 2022\n CAC Registration is Optional for Business Names\n CAC Registration is Optional for Business Names and Incorporated Trustees\n Call for Legal Awareness Articles in English or Pidgin Languages.\n Cannabidiol (C"
+      },
+      "official": false,
+      "independence_key": "sabilaw.org",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "footprint",
+      "kind": "neutral",
+      "summary": "Official SEC Nigeria website with standard regulatory content; no indications of fraud or copied scam text.",
+      "source": {
+        "url": "https://www.sec.gov.ng",
+        "title": "Welcome to SEC Nigeria - Securities and Exchange Commission, Nigeria",
+        "published_date": null,
+        "snippet": "Full Electronic Registration (e-Registration) now available on the ePortal   |  In a major boost to capital market regulation in Nigeria, President Ahmed Bola Tinubu GCFR, has assented to the Investments and Securities Bill (ISB) 2025, which repeals the Investments and Securities Act No. 29 of 2007 "
+      },
+      "official": true,
+      "independence_key": "www.sec.gov.ng",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "footprint",
+      "kind": "neutral",
+      "summary": "LinkedIn profile of an individual (Vivian Emengo); personal professional page, not an investment company site.",
+      "source": {
+        "url": "https://ng.linkedin.com/in/vivian-emengo-9a546a14/it",
+        "title": "Vivian Emengo - Nigeria | Profilo professionale",
+        "published_date": null,
+        "snippet": "# Vivian Emengo\n\nLocation: Nigeria\nLinkedIn:  \u00b7 549 followers\n\n## Recent Activity\n- Liked By: Quote of the day: \n- Liked By: From a major in international relations to a career in finance\u2014discover Suzie's journey: \n- Liked By: FAAVM Global Goodwill Ambassador for Arts and Culture: \"Denisa Gokovi\".\n-"
+      },
+      "official": false,
+      "independence_key": "ng.linkedin.com",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    },
+    {
+      "check": "voices",
+      "kind": "red_flag",
+      "summary": "SFC warning about CBEX Group and Bitget Pro due to investor withdrawal difficulties and suspected deception",
+      "source": {
+        "url": "https://apps.sfc.hk/edistributionWeb/gateway/EN/news-and-announcements/news/doc?refNo=24PR73",
+        "title": "SFC warns public of CBEX Group and Bitget Pro for ...",
+        "published_date": null,
+        "snippet": "Apr 23, 2024 \u2014 Investors reported difficulties with virtual asset withdrawals or unauthorised withdrawals. The SFC suspects that the platforms may have deceived investors with\u00a0...Read more"
+      },
+      "official": false,
+      "independence_key": "apps.sfc.hk",
+      "entity_match": "n/a",
+      "details_match": null,
+      "verified": false,
+      "rejected_reason": "published after cutoff 2025-04-09",
+      "self_evident": false
+    }
+  ],
+  "explanations": [
+    {
+      "label": "ponzi_or_fraud",
+      "probability": 0.85,
+      "distinguishing_evidence": "Promised 100% monthly return (compounding to ~409,500% annually) is mathematically unsustainable for any legitimate investment; referral bonus structure typical of pyramid schemes."
+    },
+    {
+      "label": "real_but_unlicensed",
+      "probability": 0.1,
+      "distinguishing_evidence": "No evidence of licensing or regulatory oversight provided; company name alone does not confirm legitimacy."
+    },
+    {
+      "label": "licensed_legitimate",
+      "probability": 0.03,
+      "distinguishing_evidence": "No regulator claims, license numbers, or verifiable credentials presented."
+    },
+    {
+      "label": "impersonation",
+      "probability": 0.02,
+      "distinguishing_evidence": "No indication that CBEX is mimicking a known legitimate brand."
+    }
+  ],
+  "claims_vs_records": [
+    {
+      "claim": "Promised return of 100% per month",
+      "record": "100% a month compounds to 409,500% a year (ponzi_maths check)",
+      "source_url": null,
+      "mismatch": false
+    },
+    {
+      "claim": "Invite friends and receive a 10% referral bonus",
+      "record": "Referral bonus structure consistent with pyramid/ponzi recruitment incentives",
+      "source_url": null,
+      "mismatch": false
+    }
+  ],
+  "verdict": "not_enough_evidence",
+  "reasons": [
+    "Too few verified sources to judge."
+  ],
+  "what_would_change_my_mind": [
+    "Verifiable regulatory license or registration from a recognized financial authority",
+    "Audited financial statements showing legitimate revenue sources capable of sustaining claimed returns",
+    "Transparent disclosure of investment strategy and risk factors",
+    "Absence of referral-based compensation as primary growth driver"
+  ],
+  "trace": [
+    {
+      "role": "intake_text",
+      "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+      "tokens_in": 219,
+      "tokens_out": 411,
+      "cost_usd": 0.000112,
+      "seconds": 6.76
+    },
+    {
+      "role": "planner",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "tokens_in": 199,
+      "tokens_out": 380,
+      "cost_usd": 0.000402,
+      "seconds": 3.3
+    },
+    {
+      "role": "investigator",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "tokens_in": 2278,
+      "tokens_out": 521,
+      "cost_usd": 0.001152,
+      "seconds": 4.19
+    },
+    {
+      "role": "investigator",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "tokens_in": 1808,
+      "tokens_out": 703,
+      "cost_usd": 0.001175,
+      "seconds": 5.26
+    },
+    {
+      "role": "investigator",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "tokens_in": 1410,
+      "tokens_out": 688,
+      "cost_usd": 0.001042,
+      "seconds": 73.48
+    },
+    {
+      "role": "planner",
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "tokens_in": 647,
+      "tokens_out": 135,
+      "cost_usd": 0.000316,
+      "seconds": 2.61
+    },
+    {
+      "role": "reasoner",
+      "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+      "tokens_in": 299,
+      "tokens_out": 892,
+      "cost_usd": 0.002975,
+      "seconds": 3.17
+    },
+    {
+      "tool": "calculator",
+      "promised": 1.0,
+      "months": 1.0,
+      "yearly": 4095.0
+    },
+    {
+      "tool": "tavily.search",
+      "query": "\"CBEX\" SEC Nigeria registered",
+      "results": 5,
+      "include_domains": [
+        "sec.gov.ng",
+        "cbn.gov.ng",
+        "fccpc.gov.ng"
+      ],
+      "end_date": "2025-04-09"
+    },
+    {
+      "tool": "tavily.search",
+      "query": "\"CBEX\" company registration CAC Nigeria website",
+      "results": 5,
+      "end_date": "2025-04-09"
+    },
+    {
+      "tool": "tavily.search",
+      "query": "CBEX withdrawal problem OR scam OR complaint",
+      "results": 5,
+      "end_date": "2025-04-09"
+    },
+    {
+      "tool": "tavily.search",
+      "query": "\"CBEX\" fund manager capital market operator",
+      "results": 2,
+      "include_domains": [
+        "sec.gov.ng",
+        "cbn.gov.ng",
+        "fccpc.gov.ng"
+      ],
+      "end_date": "2025-04-09"
+    },
+    {
+      "tool": "tavily.search",
+      "query": "\"CBEX\" SEC Nigeria find a registered operator",
+      "results": 0,
+      "include_domains": [
+        "sec.gov.ng",
+        "cbn.gov.ng",
+        "fccpc.gov.ng"
+      ],
+      "end_date": "2025-04-09"
+    }
+  ],
+  "cost_usd": 0.007174,
+  "disclaimer": "Crab Eyes shows evidence, not financial advice. 'High risk' is a rating, not a legal finding."
+}

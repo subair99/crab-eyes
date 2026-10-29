@@ -29,8 +29,8 @@ def test_maths_plus_one_red_flag_is_high_risk():
     assert verdict([maths, red("forum.ng")], maths=True) == "high_risk"
 
 
-def test_maths_alone_is_not_high_risk():
-    assert verdict([red("calculator", check="ponzi_maths")], maths=True) == "not_enough_evidence"
+def test_maths_alone_is_check_first():
+    assert verdict([red("calculator", check="ponzi_maths")], maths=True) == "check_first"
 
 
 def test_confirmed_register_match_looks_legitimate():
@@ -50,5 +50,7 @@ def test_unverified_findings_are_ignored():
 
 
 def test_same_source_twice_is_not_independent():
-    assert verdict([red("sec.gov.ng", official=True, entity="confirmed", check="regulator"),
-                    red("sec.gov.ng", official=True, entity="confirmed", check="regulator")]) == "not_enough_evidence"
+    v = verdict([red("sec.gov.ng", official=True, entity="confirmed", check="regulator"),
+                 red("sec.gov.ng", official=True, entity="confirmed", check="regulator")])
+    assert v != "high_risk"     
+    assert v == "check_first"   

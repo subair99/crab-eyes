@@ -6,7 +6,13 @@ LICENCE_WORDS = ("sec", "licen", "regist", "approved", "cbn", "regulat")
 
 
 async def run(claims: Claims, trace: Trace) -> list[Finding]:
-    queries = [f"{name} SEC Nigeria registered OR warning OR public notice" for name in claims.company_names[:2]]
+    queries = []
+    for name in claims.company_names[:2]:
+        queries += [
+            f'"{name}" SEC Nigeria registered',
+            f'"{name}" fund manager capital market operator',
+            f'"{name}" SEC Nigeria find a registered operator',
+        ]
     findings = await search_and_judge(
         "regulator", "investigator_regulator", queries, trace,
         include_domains=["sec.gov.ng", "cbn.gov.ng", "fccpc.gov.ng"],

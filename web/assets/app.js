@@ -38,6 +38,17 @@ const CrabEyes = (() => {
     };
   }
 
+  function traceRow(t) {
+    if (t.model) {
+      return `<tr><td>${esc(t.role)}</td><td>${esc(t.model)}</td><td>${t.tokens_in}/${t.tokens_out}</td>` +
+        `<td>$${t.cost_usd.toFixed(5)}</td></tr>`;
+    }
+    const query = t.query ? `: ${esc(t.query)}` : "";
+    const sites = t.include_domains ? ` <span class="muted">(${esc(t.include_domains.join(", "))})</span>` : "";
+    const results = t.results != null ? `${t.results} results` : "";
+    return `<tr><td>tool</td><td>${esc(t.tool)}${query}${sites}</td><td>${results}</td><td></td></tr>`;
+  }
+
   async function initHome() {
     el("go").onclick = async () => {
       const file = el("image").files[0];
@@ -70,28 +81,4 @@ const CrabEyes = (() => {
     el("cvr").innerHTML = "<tr><th>Claim</th><th>Record</th></tr>" + d.claims_vs_records.map((r) =>
       `<tr class="${r.mismatch ? "mismatch" : ""}"><td>${esc(r.claim)}</td><td>${esc(r.record)}` +
       (r.source_url ? ` <a href="${esc(r.source_url)}" target="_blank" rel="noopener">source</a>` : "") + `</td></tr>`).join("");
-    el("explanations").innerHTML = d.explanations.map((e) =>
-      `<li>${esc(e.label)}: ${Math.round(e.probability * 100)}% - ${esc(e.distinguishing_evidence)}</li>`).join("");
-    el("change").innerHTML = d.what_would_change_my_mind.map((x) => `<li>${esc(x)}</li>`).join("");
-    el("trace").innerHTML = "<tr><th>Step</th><th>Model / tool</th><th>Tokens in/out</th><th>Cost</th></tr>" +
-      d.trace.map((t) => t.model
-        ? `<tr><td>${esc(t.role)}</td><td>${esc(t.model)}</td><td>${t.tokens_in}/${t.tokens_out}</td><td>$${t.cost_usd.toFixed(5)}</td></tr>`
-        : `<tr><td>tool</td><td>${esc(t.tool)}</td><td></td><td></td></tr>`).join("");
-    el("cost").textContent = `Total model cost: $${d.cost_usd.toFixed(4)}`;
-    el("disclaimer").textContent = d.disclaimer;
-    el("prove").onclick = async () => {
-      el("change").innerHTML = "";
-      await streamInvestigation(`/api/dossier/${encodeURIComponent(id)}/evidence`, {text: el("evidence").value},
-        progressHandler(el("change")));
-    };
-  }
-
-  async function initLedger() {
-    const rows = await (await fetch("/api/ledger")).json();
-    el("ledger").innerHTML = "<tr><th>Scheme</th><th>First seen</th><th>Reports (7 days)</th><th>Growth</th><th>Verdict</th></tr>" +
-      rows.map((r) => `<tr><td>${esc(r.scheme)}</td><td>${esc(r.first_seen.slice(0, 10))}</td><td>${r.reports_7d}</td>` +
-        `<td>${r.growth > 0 ? "+" : ""}${r.growth}</td><td>${esc(LABELS[r.verdict])}</td></tr>`).join("");
-  }
-
-  return {initHome, initDossier, initLedger};
-})();
+    el("explanations").innerHTML =

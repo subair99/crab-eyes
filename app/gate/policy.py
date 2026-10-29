@@ -66,8 +66,12 @@ def decide(inp: GateInput):
         return _verdict("high_risk"), reasons
     if register_ok and not official_red:
         return _verdict("looks_legitimate"), [_get(register_ok[0], "summary")]
-    if len(sources) < t["min_verified_sources"]:
-        return _verdict("not_enough_evidence"), ["Too few verified sources to judge."]
     if red:
         return _verdict("check_first"), [_get(f, "summary") for f in red][:3]
-    return _verdict("not_enough_evidence"), ["No verified red flags and no confirmed register entry."]
+    if len(sources) < t["min_verified_sources"]:
+        return _verdict("not_enough_evidence"), ["Too few verified sources to judge."]
+    return _verdict("not_enough_evidence"), [
+        "No red flags found.",
+        "Registration could not be confirmed on an official register (sec.gov.ng), so Crab Eyes "
+        "will not call it legitimate. Check the evidence below, or use Prove me wrong with an official link.",
+    ]

@@ -21,6 +21,7 @@ async def search(query: str, trace: Trace, max_results: int = 5, **kwargs) -> li
     end_date = get_settings().evidence_end_date
     if end_date and "end_date" not in kwargs:
         kwargs["end_date"] = end_date
+        kwargs.setdefault("topic", "news")  # news results carry publication dates, which the cut-off needs
     resp = await _client().search(query, max_results=max_results, **kwargs)
     results = resp.get("results", [])
     trace.add_tool("tavily.search", query=query, results=len(results), **{k: v for k, v in kwargs.items()
