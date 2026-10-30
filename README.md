@@ -6,7 +6,8 @@
 
 Built for the **Nebius x NVIDIA Global AI Hackathon** (Best Apps and Agents track) with **NVIDIA Nemotron models on Nebius Token Factory** and **Tavily**.
 
-
+- **Demo:** [TODO_DEMO_URL](https://github.com/subair99/crab-eyes)
+- **Video (under 3 minutes):** T[![Watch it here](images/CrabEyes-thumbnail.png)](https://youtu.be/LzxBUc1TDOc)
 
 ---
 
