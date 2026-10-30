@@ -91,6 +91,13 @@ async def verify(claims: Claims, findings: list[Finding], trace: Trace) -> list[
             if live:
                 f.rejected_reason = f"contradicted by finding(s) {live}"
 
+    # Complaints need corroboration: one site (one post, however many comments) is not a pattern.
+    voices_red = [f for f in findings if f.check == "voices" and f.kind == "red_flag" and f.rejected_reason is None]
+    if len({f.independence_key for f in voices_red}) < 2:
+        for f in voices_red:
+            f.kind = "neutral"
+            f.summary += " (Only one source reports this, so it is not counted as a red flag.)"
+
     for f in findings:
         f.verified = f.rejected_reason is None and (
             f.self_evident or f.source is not None or f.check in ("ponzi_maths", "user_evidence"))
