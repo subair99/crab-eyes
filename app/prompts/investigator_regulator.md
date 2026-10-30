@@ -11,3 +11,4 @@ Classify each relevant result:
 Ignore results about different companies. Only report what the page actually says.
 Return JSON only: {"findings": [{"kind": "red_flag|register_match|neutral", "summary": "", "url": "", "official": true,
 "details_match": null}]}
+Never mark "red_flag" just because a page does not list the company. Only an explicit warning, sanction, or official statement that the company is not registered counts as a red flag; a missing listing is "neutral".

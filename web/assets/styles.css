@@ -16,3 +16,20 @@ th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line
 .mismatch td { background: #fdecea; }
 .rejected { opacity: .6; }
 .progress { color: var(--muted); }
+
+button {
+  transition: transform 80ms ease, box-shadow 80ms ease, background-color 150ms ease, opacity 150ms ease;
+  box-shadow: 0 3px 0 #000;
+}
+button:hover:not(:disabled) { background: #333; }
+button:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #000;
+}
+button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: translateY(3px);
+  box-shadow: 0 0 0 #000;
+}
+button:focus-visible { outline: 3px solid #b26a00; outline-offset: 2px; }

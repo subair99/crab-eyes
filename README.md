@@ -64,7 +64,7 @@ The five investigators:
 | People | Searches named promoters (full names only) |
 | Voices | Looks for scam patterns: blocked withdrawals, "withdrawal fees", collapse, regulator action |
 
-## How we use NVIDIA Nemotron and Nebius Token Factory
+## How I use NVIDIA Nemotron and Nebius Token Factory
 
 Every model call goes through the **Nebius Token Factory** OpenAI-compatible API. Each step uses the cheapest model that does it well; the routing is in [`routing.yaml`](routing.yaml).
 
@@ -79,7 +79,7 @@ Every dossier includes a trace of each model call with its tokens and cost. Mode
 
 TODO: if deployed, add a line here on the Nebius Serverless Endpoint or Job; otherwise delete this line.
 
-## How we use Tavily
+## How I use Tavily
 
 - **Search**, limited to official domains for the regulator check, and to news with an `end_date` for historical re-runs.
 - **Extract** to read a scheme's website without opening it from our server.
@@ -96,7 +96,7 @@ TODO: if deployed, add a line here on the Nebius Serverless Endpoint or Job; oth
 | Legitimate products marked High risk | **0** |
 | High risk verdicts that were correct | **100%** |
 | Real schemes flagged High risk | **4 of 4** |
-| All scams flagged High risk | 6 of 8 |
+| All scams flagged High risk | 7 of 8 |
 | Median time per investigation | 39 seconds |
 | Average model cost per investigation | **$0.011** |
 
@@ -104,7 +104,7 @@ Legitimate products came back "Check first" or "Not enough evidence", never High
 
 ### The CBEX re-run (`evals/cbex_rerun/`)
 
-We asked Crab Eyes to investigate CBEX using only sources published on or before **9 April 2025**, the day before withdrawals froze.
+I asked Crab Eyes to investigate CBEX using only sources published on or before **9 April 2025**, the day before withdrawals froze.
 
 - **Verdict: Check first.** "100% a month compounds to 409,500% a year."
 - Little else had been published before the collapse.
