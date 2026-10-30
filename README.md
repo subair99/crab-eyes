@@ -127,7 +127,7 @@ Telegram bot; opt-in "you've seen this before" memory; a nightly job that stores
 Requirements: Python 3.12+, [uv](https://docs.astral.sh/uv/), Docker, a Nebius Token Factory API key and a Tavily API key.
 
 ```bash
-git clone TODO_REPO_URL crab-eyes && cd crab-eyes
+git clone https://github.com/subair99/crab-eyes crab-eyes && cd crab-eyes
 uv sync
 cp .env.example .env        # add TOKEN_FACTORY_API_KEY, TAVILY_API_KEY and BENCHMARK_ANNUAL_RATE
 docker compose up -d db
