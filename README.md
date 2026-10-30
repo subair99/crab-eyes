@@ -6,8 +6,7 @@
 
 Built for the **Nebius x NVIDIA Global AI Hackathon** (Best Apps and Agents track) with **NVIDIA Nemotron models on Nebius Token Factory** and **Tavily**.
 
-- **Demo:** TODO_DEMO_URL
-- **Video (under 3 minutes):** TODO_YOUTUBE_URL
+
 
 ---
 

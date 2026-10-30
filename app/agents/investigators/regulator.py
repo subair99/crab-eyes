@@ -3,6 +3,8 @@ from app.llm.trace import Trace
 from app.schemas import Claims, Finding, Source
 
 LICENCE_WORDS = ("sec", "licen", "regist", "approved", "cbn", "regulat")
+# Claims about someone else's licence ("buy through registered stockbrokers") are not the scheme claiming one.
+THIRD_PARTY = ("broker", "dealer", "agent", "bank", "through", "via")
 
 
 async def run(claims: Claims, trace: Trace) -> list[Finding]:
@@ -17,7 +19,10 @@ async def run(claims: Claims, trace: Trace) -> list[Finding]:
         "regulator", "investigator_regulator", queries, trace,
         include_domains=["sec.gov.ng", "cbn.gov.ng", "fccpc.gov.ng"],
     )
-    claims_licence = any(w in c.lower() for c in claims.regulator_claims for w in LICENCE_WORDS)
+    claims_licence = any(
+        any(w in c.lower() for w in LICENCE_WORDS) and not any(t in c.lower() for t in THIRD_PARTY)
+        for c in claims.regulator_claims
+    )
     on_register = any(f.kind == "register_match" for f in findings)
     if claims_licence and claims.company_names and not on_register:
         name = claims.company_names[0]

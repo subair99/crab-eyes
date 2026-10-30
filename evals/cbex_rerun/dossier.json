@@ -1,5 +1,5 @@
 {
-  "id": "44ed012025fe",
+  "id": "3f12c0083ce5",
   "claims": {
     "company_names": [
       "CBEX"
@@ -10,38 +10,16 @@
     "people": [],
     "urls": [],
     "other_claims": [
-      "Register, deposit and earn.",
-      "Invite friends and receive a 10% referral bonus."
+      "10% referral bonus"
     ],
     "language": "en",
     "raw_text": "CBEX - digital asset trading platform.\nOur AI trading signals help you double your investment: 100% return in 30 days.\nRegister, deposit and earn. Invite friends and receive a 10% referral bonus."
   },
   "plan": [
-    "regulator",
     "ponzi_maths",
-    "footprint",
-    "people",
-    "voices"
+    "footprint"
   ],
   "findings": [
-    {
-      "check": "regulator",
-      "kind": "red_flag",
-      "summary": "SEC Nigeria issued an Illegal Operator Alert for Silverkuun Investment Cooperative Society/Silverkuun Limited on 28 May 2025, indicating it is not registered.",
-      "source": {
-        "url": "https://sec.gov.ng/for-investors/keep-track-of-circulars",
-        "title": "Keep Track of Circulars - Securities and Exchange Commission, Nigeria",
-        "published_date": "Fri, 01 Nov 2024 00:00:00 GMT",
-        "snippet": "Illegal Operator Alert \u2013 Silverkuun Investment Cooperative Society/Silverkuun Limited May 28, 2025\n\nPublic Notice \u2013 Property World Africa Network (PWAN)/PWANMax May 6, 2025\n\nTechnology adoption Survey for Capital Market Operators May 5, 2025\n\nPostponement of First Capital Market Committee (CMC) Meet"
-      },
-      "official": true,
-      "independence_key": "sec.gov.ng",
-      "entity_match": "mismatch",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "about a different company",
-      "self_evident": false
-    },
     {
       "check": "ponzi_maths",
       "kind": "red_flag",
@@ -58,7 +36,7 @@
     {
       "check": "footprint",
       "kind": "neutral",
-      "summary": "BBC Pidgin article describes CBEX trading platform losses and cites SEC warning that unregistered online forex trading is illegal.",
+      "summary": "No concrete issues such as a very new domain for a claimed long history, copied scam text, website\u2011company mismatch, or fake/misused address were identified in this source.",
       "source": {
         "url": "https://www.bbc.com/pidgin/articles/cp8jz8nk60eo",
         "title": "CBEX trading platform: MMM, MBA forex and oda ponzi schemes wey don crash for Nigeria - BBC",
@@ -76,7 +54,7 @@
     {
       "check": "footprint",
       "kind": "neutral",
-      "summary": "BBC Pidgin article notes withdrawal suspensions on CBEX, mentions its 2024 launch in Nigeria and referral bonus structure.",
+      "summary": "No concrete issues such as a very new domain for a claimed long history, copied scam text, website\u2011company mismatch, or fake/misused address were identified in this source.",
       "source": {
         "url": "https://www.bbc.com/pidgin/articles/cgjly4d65j5o",
         "title": "CBEX: Nigerians para afta losing money to trading platform, angry youths for Ibadan loot office - BBC",
@@ -94,7 +72,7 @@
     {
       "check": "footprint",
       "kind": "neutral",
-      "summary": "Financial Times piece discusses Nigeria's efforts to counter financial fraud, referencing the CBEX collapse and investor losses.",
+      "summary": "No concrete issues such as a very new domain for a claimed long history, copied scam text, website\u2011company mismatch, or fake/misused address were identified in this source.",
       "source": {
         "url": "https://www.ft.com/content/582be492-e875-4c0e-8ab3-02e2221cedaf",
         "title": "Nigeria seeks to counter financial fraud scourge - Financial Times",
@@ -112,7 +90,7 @@
     {
       "check": "footprint",
       "kind": "neutral",
-      "summary": "Business Insider Africa reports Interpol's involvement in investigating CBEX as one of Nigeria's largest Ponzi schemes.",
+      "summary": "No concrete issues such as a very new domain for a claimed long history, copied scam text, website\u2011company mismatch, or fake/misused address were identified in this source.",
       "source": {
         "url": "https://africa.businessinsider.com/local/lifestyle/cbex-interpol-to-aid-in-the-investigation-of-one-of-nigerias-largest-ponzi-schemes/wr7zb0w",
         "title": "CBEX: Interpol to aid in the investigation of one of Nigeria\u2019s largest Ponzi schemes - Business Insider Africa",
@@ -130,97 +108,7 @@
     {
       "check": "footprint",
       "kind": "neutral",
-      "summary": "99Bitcoins article covers post-CBEX developments, including Onafriq adopting USDC and manhunt for CBEX suspects.",
-      "source": {
-        "url": "https://99bitcoins.com/news/africa-crypto-week-in-review-onafriq-taps-usdc-nigeria-after-8-suspects-following-cbex-collapse-phoenix-group-expands-bitcoin-mining-operations-in-ethiopia/",
-        "title": "Africa Crypto News: Onafriq Adopts USDC, Nigeria After Scammers - 99Bitcoins",
-        "published_date": "Sat, 03 May 2025 09:27:02 GMT",
-        "snippet": "Home / Africa Crypto Week in Review:\u00a0 Onafriq Taps USDC, Nigeria After 8 Suspects Following CBEX Collapse, Phoenix Group Expands Bitcoin Mining Operations In Ethiopia Africa Crypto Week in Review:\u00a0 Onafriq Taps USDC, Nigeria After 8 Suspects Following CBEX Collapse, Phoenix Group Expands Bitcoin Min"
-      },
-      "official": false,
-      "independence_key": "99bitcoins.com",
-      "entity_match": "n/a",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "published after cutoff 2025-04-09",
-      "self_evident": false
-    },
-    {
-      "check": "voices",
-      "kind": "red_flag",
-      "summary": "Investors report withdrawal suspensions and inability to access funds; platform promoted via referral bonuses before crashing.",
-      "source": {
-        "url": "https://www.bbc.com/pidgin/articles/cgjly4d65j5o",
-        "title": "CBEX: Nigerians para afta losing money to trading platform, angry youths for Ibadan loot office - BBC",
-        "published_date": "Tue, 15 Apr 2025 09:05:59 GMT",
-        "snippet": "Dose wey invest ontop di platform say dem bin no fit withdraw dia money for some days as withdrawal dey suspended. Bifor CBEX crash, pipo wey bin dey invest ontop di platform dey spread di message about di investment on social media platforms and WhatsApp so odas go fit join. CBEX wey start dia oper"
-      },
-      "official": false,
-      "independence_key": "www.bbc.com",
-      "entity_match": "n/a",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "published after cutoff 2025-04-09",
-      "self_evident": false
-    },
-    {
-      "check": "voices",
-      "kind": "red_flag",
-      "summary": "EFCC, Interpol and FBI are investigating CBEX as a Ponzi scheme after withdrawal suspensions and platform collapse.",
-      "source": {
-        "url": "https://www.bbc.com/pidgin/articles/cvg8q8qp3x7o",
-        "title": "EFCC collaborate wit Interpol, FBI on investigation ova CBEX Ponzi scheme - BBC",
-        "published_date": "Wed, 16 Apr 2025 09:34:58 GMT",
-        "snippet": "Di anti-graft agency tell BBC News Pidgin say dem dey collaborate wit di International Criminal Police Organisation (Interpol) and di Federal Bureau of Investigation (FBI) and odas to find dose wey dey behind di CBEX platform and how dem fit recover some money. Dis na afta dose wey invest ontop di p"
-      },
-      "official": false,
-      "independence_key": "www.bbc.com",
-      "entity_match": "n/a",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "published after cutoff 2025-04-09",
-      "self_evident": false
-    },
-    {
-      "check": "voices",
-      "kind": "red_flag",
-      "summary": "Business Insider Africa describes CBEX as one of Nigeria's largest Ponzi schemes, with Interpol assisting the investigation.",
-      "source": {
-        "url": "https://africa.businessinsider.com/local/lifestyle/cbex-interpol-to-aid-in-the-investigation-of-one-of-nigerias-largest-ponzi-schemes/wr7zb0w",
-        "title": "CBEX: Interpol to aid in the investigation of one of Nigeria\u2019s largest Ponzi schemes - Business Insider Africa",
-        "published_date": "Wed, 16 Apr 2025 04:45:23 GMT",
-        "snippet": "# CBEX: Interpol to aid in the investigation of one of Nigeria\u2019s largest Ponzi schemes **One of the most contentious conversations in Nigeria currently concerns the proliferation of Ponzi schemes in the last decade, which was brought to the forefront by the recent CBEX scam.** CBEX: Interpol to aid "
-      },
-      "official": false,
-      "independence_key": "africa.businessinsider.com",
-      "entity_match": "n/a",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "published after cutoff 2025-04-09",
-      "self_evident": false
-    },
-    {
-      "check": "voices",
-      "kind": "red_flag",
-      "summary": "FT article notes an investor lost $2,000 after CBEX collapse, highlighting inability to recoup funds amid fraud warnings.",
-      "source": {
-        "url": "https://www.ft.com/content/582be492-e875-4c0e-8ab3-02e2221cedaf",
-        "title": "Nigeria seeks to counter financial fraud scourge - Financial Times",
-        "published_date": "Thu, 25 Sep 2025 04:00:09 GMT",
-        "snippet": "Accessibility helpSkip to navigationSkip to contentSkip to footer * Subscribe Jump to comments section *This article is the latest part of the FT\u2019s* *Financial Literacy and Inclusion Campaign* John, whose name has been changed at his request, was introduced to the digital asset trading platform Cryp"
-      },
-      "official": false,
-      "independence_key": "www.ft.com",
-      "entity_match": "n/a",
-      "details_match": null,
-      "verified": false,
-      "rejected_reason": "published after cutoff 2025-04-09",
-      "self_evident": false
-    },
-    {
-      "check": "voices",
-      "kind": "red_flag",
-      "summary": "99Bitcoins reports Nigeria is hunting CBEX scammers after eight suspects were arrested following the platform's collapse.",
+      "summary": "No concrete issues such as a very new domain for a claimed long history, copied scam text, website\u2011company mismatch, or fake/misused address were identified in this source.",
       "source": {
         "url": "https://99bitcoins.com/news/africa-crypto-week-in-review-onafriq-taps-usdc-nigeria-after-8-suspects-following-cbex-collapse-phoenix-group-expands-bitcoin-mining-operations-in-ethiopia/",
         "title": "Africa Crypto News: Onafriq Adopts USDC, Nigeria After Scammers - 99Bitcoins",
@@ -239,29 +127,35 @@
   "explanations": [
     {
       "label": "ponzi_or_fraud",
-      "probability": 0.9,
-      "distinguishing_evidence": "100% monthly return compounds to ~409,500% annually, which is mathematically unsustainable for any legitimate investment; 10% referral bonus for inviting friends is characteristic of pyramid/ponzi schemes."
+      "probability": 0.85,
+      "distinguishing_evidence": "100% monthly return compounds to 409,500% annually, which is mathematically impossible for any legitimate investment; 10% referral bonus indicates pyramid recruitment structure."
     },
     {
       "label": "real_but_unlicensed",
+      "probability": 0.1,
+      "distinguishing_evidence": "Could be an unlicensed high-risk venture, but promised returns are far beyond any plausible business model."
+    },
+    {
+      "label": "impersonation",
       "probability": 0.04,
-      "distinguishing_evidence": "No evidence of actual business operations, products, or services; only promises of returns from deposits and referrals."
+      "distinguishing_evidence": "No evidence CBEX is impersonating a known licensed entity; name alone does not match known brands."
     },
     {
       "label": "licensed_legitimate",
       "probability": 0.01,
-      "distinguishing_evidence": "No regulator claims, no license information, no verifiable corporate registration found."
-    },
-    {
-      "label": "impersonation",
-      "probability": 0.05,
-      "distinguishing_evidence": "No evidence this entity is impersonating a known legitimate brand; appears to be a standalone scheme."
+      "distinguishing_evidence": "No regulator claims or licensing evidence; such returns would violate financial regulations in any jurisdiction."
     }
   ],
   "claims_vs_records": [
     {
-      "claim": "100% return per month (promised_return: 1.0, return_period_months: 1.0)",
-      "record": "100% a month compounds to 409,500% a year",
+      "claim": "100% return per month (1.0 monthly)",
+      "record": "100% monthly compounds to ~409,500% annually",
+      "source_url": null,
+      "mismatch": true
+    },
+    {
+      "claim": "10% referral bonus",
+      "record": "Referral bonuses are characteristic of pyramid/ponzi structures",
       "source_url": null,
       "mismatch": true
     }
@@ -271,75 +165,51 @@
     "100% a month compounds to 409,500% a year."
   ],
   "what_would_change_my_mind": [
-    "Verifiable audited financial statements showing legitimate revenue sources",
-    "Regulatory license or registration from a recognized financial authority",
-    "Transparent business model with identifiable products/services generating returns",
-    "Independent third-party audit of investment strategy and risk management"
+    "Verified regulatory license from a recognized financial authority",
+    "Audited financial statements showing legitimate revenue sources generating such returns",
+    "Independent third-party audit of trading/investment operations",
+    "Regulatory confirmation that the offering complies with securities laws"
   ],
   "trace": [
     {
       "role": "intake_text",
       "model": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
       "tokens_in": 219,
-      "tokens_out": 511,
-      "cost_usd": 0.000136,
-      "seconds": 5.18
+      "tokens_out": 528,
+      "cost_usd": 0.00014,
+      "seconds": 5.14
     },
     {
       "role": "planner",
       "model": "nvidia/nemotron-3-super-120b-a12b",
-      "tokens_in": 206,
-      "tokens_out": 260,
-      "cost_usd": 0.000296,
-      "seconds": 1.85
+      "tokens_in": 191,
+      "tokens_out": 486,
+      "cost_usd": 0.000495,
+      "seconds": 6.26
     },
     {
       "role": "investigator",
       "model": "nvidia/nemotron-3-super-120b-a12b",
       "tokens_in": 1592,
-      "tokens_out": 583,
-      "cost_usd": 0.001002,
-      "seconds": 3.41
-    },
-    {
-      "role": "investigator",
-      "model": "nvidia/nemotron-3-super-120b-a12b",
-      "tokens_in": 1559,
-      "tokens_out": 894,
-      "cost_usd": 0.001272,
-      "seconds": 4.45
-    },
-    {
-      "role": "investigator",
-      "model": "nvidia/nemotron-3-super-120b-a12b",
-      "tokens_in": 1194,
-      "tokens_out": 384,
-      "cost_usd": 0.000704,
-      "seconds": 2.58
+      "tokens_out": 709,
+      "cost_usd": 0.001116,
+      "seconds": 4.93
     },
     {
       "role": "planner",
       "model": "nvidia/nemotron-3-super-120b-a12b",
-      "tokens_in": 727,
-      "tokens_out": 259,
-      "cost_usd": 0.000451,
-      "seconds": 1.92
-    },
-    {
-      "role": "verifier",
-      "model": "nvidia/nemotron-3-super-120b-a12b",
-      "tokens_in": 494,
-      "tokens_out": 198,
-      "cost_usd": 0.000326,
-      "seconds": 1.34
+      "tokens_in": 528,
+      "tokens_out": 511,
+      "cost_usd": 0.000618,
+      "seconds": 5.79
     },
     {
       "role": "reasoner",
       "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
-      "tokens_in": 306,
-      "tokens_out": 1012,
-      "cost_usd": 0.003342,
-      "seconds": 2.76
+      "tokens_in": 291,
+      "tokens_out": 990,
+      "cost_usd": 0.003261,
+      "seconds": 3.61
     },
     {
       "tool": "calculator",
@@ -349,50 +219,11 @@
     },
     {
       "tool": "tavily.search",
-      "query": "CBEX withdrawal problem OR scam OR complaint",
-      "results": 5,
-      "end_date": "2025-04-09"
-    },
-    {
-      "tool": "tavily.search",
       "query": "\"CBEX\" company registration CAC Nigeria website",
       "results": 5,
       "end_date": "2025-04-09"
-    },
-    {
-      "tool": "tavily.search",
-      "query": "\"CBEX\" SEC Nigeria registered",
-      "results": 0,
-      "include_domains": [
-        "sec.gov.ng",
-        "cbn.gov.ng",
-        "fccpc.gov.ng"
-      ],
-      "end_date": "2025-04-09"
-    },
-    {
-      "tool": "tavily.search",
-      "query": "\"CBEX\" fund manager capital market operator",
-      "results": 2,
-      "include_domains": [
-        "sec.gov.ng",
-        "cbn.gov.ng",
-        "fccpc.gov.ng"
-      ],
-      "end_date": "2025-04-09"
-    },
-    {
-      "tool": "tavily.search",
-      "query": "\"CBEX\" SEC Nigeria find a registered operator",
-      "results": 2,
-      "include_domains": [
-        "sec.gov.ng",
-        "cbn.gov.ng",
-        "fccpc.gov.ng"
-      ],
-      "end_date": "2025-04-09"
     }
   ],
-  "cost_usd": 0.007529,
+  "cost_usd": 0.00563,
   "disclaimer": "Crab Eyes shows evidence, not financial advice. 'High risk' is a rating, not a legal finding."
 }
